@@ -44,7 +44,7 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+x kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
@@ -216,3 +216,6 @@ set $urgent-bg-color     #E53935
 bindsym $mod+D exec rofi -show drun  
 
 exec /usr/bin/compton --config /home/spctr/.compton.conf~.i3/config
+
+exec_always feh --bg-scale /wallpaper/bg.png
+
