@@ -8,6 +8,11 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar
-polybar example -r &
+
 
 echo "Bars launched..."
+
+for MONITOR in $(polybar --list-monitors | cut -d":" -f1);
+do
+	polybar demo -r &
+done
