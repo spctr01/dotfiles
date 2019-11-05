@@ -221,4 +221,3 @@ exec /usr/bin/compton --config /home/spctr/.compton.conf~.i3/config
 exec feh --bg-scale /home/spctr/wallpaper/bg.png
 
 border_radius 7
-rakshit
