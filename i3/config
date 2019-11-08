@@ -210,11 +210,13 @@ set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
 #################################
 
+
+
 bindsym $mod+D exec rofi -show drun  
 
-exec /usr/bin/compton --config /home/spctr/.compton.conf~.i3/config
 
-exec feh --bg-scale /home/spctr/wallpaper/bg.png
+
+exec_always feh --bg-scale /home/spctr/wallpaper/bg.png
 
 border_radius 7
 

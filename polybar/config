@@ -1,6 +1,6 @@
 [colors]
 
-background = #222
+background = #494b5e
 background-alt = #444
 foreground = #dfdfdf
 foreground-alt = #555
@@ -23,7 +23,7 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 4
+line-size = 2
 line-color = #d8dee9
 enable-ipc = true
 
@@ -45,7 +45,7 @@ modules-left =  i3
 modules-center = date
 modules-right = filesystem xbacklight alsa  xkeyboard memory cpu wlan eth   battery powermenu
 
-tray-position = none
+tray-position = right
 tray-padding = 9
 tray-offset-y = 0
 tray-offset-x = 0
