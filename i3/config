@@ -224,3 +224,9 @@ border_radius 7
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+# Screen brightness controls with notification
+bindsym XF86MonBrightnessUp exec "light -A 5; notify-send 'brightness up'"; # increase screen brightness with notification
+bindsym XF86MonBrightnessDown exec "light -U 5; notify-send 'brightness down'"; # decrease screen brightness with notification
+
+
+

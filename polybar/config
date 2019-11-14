@@ -158,6 +158,9 @@ bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
+output = eDP-1
+enable-scroll = true
+
 
 
 
@@ -378,6 +381,8 @@ margin-top = 5
 margin-bottom = 5
 
 ; vim:ft=dosini
+
+
 
 
 
