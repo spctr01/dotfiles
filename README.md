@@ -2,4 +2,4 @@
 
 still ricing
 
- ![alt text](https://github.com/spctr01/dotfiles/imgs/1.png)
+ ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/1.png)
