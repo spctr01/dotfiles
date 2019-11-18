@@ -1,6 +1,6 @@
 [colors]
 
-background = #494b5e
+background = #282828
 background-alt = #444
 foreground = #dfdfdf
 foreground-alt = #555
@@ -17,7 +17,7 @@ width = 1820
 height = 20
 offset-x = 50
 offset-y = 7
-radius = 6
+radius = 9
 fixed-center = true
 
 background = ${colors.background}
@@ -37,7 +37,7 @@ module-margin-left = 3
 module-margin-right = 2
 
 
-font-0 = fixed:pixelsize=10;1
+font-0 = fixed:pixelsize=11;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
@@ -45,13 +45,14 @@ modules-left =  i3
 modules-center = date
 modules-right = filesystem xbacklight alsa  xkeyboard memory cpu wlan eth   battery powermenu
 
-tray-position = right
+
+tray-position = none
 tray-padding = 9
 tray-offset-y = 0
 tray-offset-x = 0
 tray-maxsize = 17
-tray-detached = false
-tray-background = ${colors.my_background}
+tray-detached = true
+tray-background = #494b5e
 
 wm-restack = i3
 override-redirect = true
@@ -69,12 +70,12 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
+;format-prefix = " "
+;format-prefix-foreground = #8138a0
+;format-prefix-underline = #8138a0
 
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
+label-layout = 
+;label-layout-underline = #8138a0
 
 label-indicator-padding = 2
 label-indicator-margin = 1
@@ -115,7 +116,7 @@ label-mode-background = ${colors.primary}
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-underline= #e07121
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -134,7 +135,7 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
 ; Separator in between workspaces
-; label-separator = |
+ label-separator = |
 
 
 
@@ -145,18 +146,18 @@ type = internal/backlight
 card = intel_backlight 
 
 format = <label> <bar>
-label = BL
+label =  
 
 bar-width = 10
 bar-indicator = |
-bar-indicator-foreground = #fff
+bar-indicator-foreground = #edda0b
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = #e07121
 bar-empty = ─
 bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
+bar-empty-foreground = #0de848
 
 output = eDP-1
 enable-scroll = true
@@ -178,7 +179,7 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = f71904
 format-underline = #f90000
 label = %percentage:2%%
 
@@ -190,7 +191,7 @@ label = %percentage:2%%
 type = internal/memory
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = #4bffdc
 format-underline = #4bffdc
 label = %percentage_used%%
 
@@ -211,14 +212,14 @@ format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+;label-disconnected-foreground = #04f735
 
 ramp-signal-0 = 
 ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-foreground = #9f78e1
 
 
 
@@ -255,7 +256,7 @@ time = %I:%M
 time-alt = %I:%M:%S
 
 format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = #47ad3e
 format-underline = #0a6cf5
 
 label = %date% %time%
@@ -267,30 +268,18 @@ label = %date% %time%
 [module/alsa]
 type = internal/alsa
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
+format-volume-prefix = ""
+format-volume = <label-volume> 
+;label-volume =  
+label-volume-foreground = f4f6f7
+format-volume-underline = #00c5f7
+format-volume-foreground = #00c5f7
 
 format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
+format-muted-foreground = #f92504
+label-muted =.
 
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+
 
 
 
@@ -303,30 +292,30 @@ adapter = AC0
 full-at = 100
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = #04f735
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+format-full-prefix-foreground = #f7eb04
+format-full-underline =  17701a
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground =  #f72707
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-foreground = e509f4
 animation-charging-framerate = 750
 
 animation-discharging-0 = 
 animation-discharging-1 = 
 animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-foreground = #04f735
 animation-discharging-framerate = 750
 
 
@@ -340,12 +329,12 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = bye
+label-open = 
 label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
+label-separator-foreground = #458588
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
