@@ -145,9 +145,11 @@ label-urgent-padding = 2
 type = internal/backlight 
 card = intel_backlight 
 
-format = <label> <bar>
-label =  
-
+format = <label> 
+;label =  
+format-foreground = #f0f93b
+format-prefix =" "
+format-underline = #f0f93b
 bar-width = 10
 bar-indicator = |
 bar-indicator-foreground = #edda0b
@@ -181,6 +183,7 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = f71904
 format-underline = #f90000
+format-foreground = #f90000
 label = %percentage:2%%
 
 
@@ -193,6 +196,7 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = #4bffdc
 format-underline = #4bffdc
+format-foreground = #4bffdc
 label = %percentage_used%%
 
 
@@ -207,6 +211,7 @@ interval = 3.0
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
 label-connected = %essid%
+format-connected-foreground = #9f78e1
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -253,11 +258,12 @@ date =
 date-alt = " %d-%m-%Y"
 
 time = %I:%M
-time-alt = %I:%M:%S
+;time-alt = %I:%M:%S
 
 format-prefix = 
-format-prefix-foreground = #47ad3e
-format-underline = #0a6cf5
+format-prefix-foreground = #f75802
+format-underline = #f75802
+
 
 label = %date% %time%
 
@@ -271,7 +277,7 @@ type = internal/alsa
 format-volume-prefix = ""
 format-volume = <label-volume> 
 ;label-volume =  
-label-volume-foreground = f4f6f7
+label-volume-foreground = #00c5f7
 format-volume-underline = #00c5f7
 format-volume-foreground = #00c5f7
 
@@ -293,13 +299,15 @@ full-at = 100
 
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = #04f735
+format-charging-foreground = #91f93b
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
+format-discharging-foreground = #91f93b
 
 format-full-prefix = " "
 format-full-prefix-foreground = #f7eb04
-format-full-underline =  17701a
+format-full-underline = #17701a
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -370,9 +378,3 @@ margin-top = 5
 margin-bottom = 5
 
 ; vim:ft=dosini
-
-
-
-
-
-
