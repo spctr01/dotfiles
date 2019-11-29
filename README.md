@@ -1,11 +1,11 @@
  # MY ARCH LINUX CONFIGRATION 
-> - ### OS:-           ARCH LINUX
-> - ### WM:-           I3-GAPS
-> - ### BAR:-          POLYBAR
-> - ### EMULATOR :-    ST
-> - ### COMPOSITOR :-  PICOM
-> - ### SHELL :-       ZSH
-> - ### MENU :-        ROFI
+> -  OS:-           ARCH LINUX
+> -  WM:-           I3-GAPS
+> -  BAR:-          POLYBAR
+> -  EMULATOR :-    ST
+> -  COMPOSITOR :-  PICOM
+> -  SHELL :-       ZSH
+> -  MENU :-        ROFI
 
  ## SOME SCREENCHOTS
 
