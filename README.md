@@ -1,4 +1,4 @@
- # MY ARCH LINUX CONFIGRATION 
+
 > -  OS:-           ARCH LINUX
 > -  WM:-           I3-GAPS
 > -  BAR:-          POLYBAR
