@@ -66,10 +66,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+#bindsym $mod+Shift+j move left
+#bindsym $mod+Shift+k move down
+#bindsym $mod+Shift+l move up
+#bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -223,10 +223,12 @@ border_radius 7
 ######polybar
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/scripts/spotify/launchlistener.sh.sh
+
 
 # Screen brightness controls with notification
-bindsym XF86MonBrightnessUp exec "light -A 5; notify-send 'brightness up'"; # increase screen brightness with notification
-bindsym XF86MonBrightnessDown exec "light -U 5; notify-send 'brightness down'"; # decrease screen brightness with notification
+bindsym XF86MonBrightnessUp exec "light -A 2;  # increase screen brightness with notification
+bindsym XF86MonBrightnessDown exec "light -U 2;  # decrease screen brightness with notification
 
 
 
