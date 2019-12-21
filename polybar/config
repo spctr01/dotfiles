@@ -1,15 +1,15 @@
 [colors]
-
 background = #121423
 background-alt = #444
 foreground = #dfdfdf
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
-alert = #bd2c40
+alert = #F97E72
 my_background = #222
 underline = f6f7f4
 transparent = #a121423
+
 
 
 [bar/demo]
@@ -25,7 +25,7 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 0
+line-size = 1
 line-color = #d8dee9
 enable-ipc = true
 
@@ -45,9 +45,9 @@ font-0 = fixed:pixelsize=11;2
 font-1 = unifont:fontformat=truetype:size=10:antialias=false;1
 font-2 = siji:pixelsize=10;1
 
-modules-left =  powermenu 
-modules-center = i3
-modules-right =  xkeyboard   xbacklight  alsa  memory cpu wlan eth   battery  date
+modules-left =  powermenu i3
+modules-center =  spotify previous playpause next
+modules-right =  xkeyboard     alsa  memory cpu   battery  date
 
 
 tray-position = right
@@ -112,19 +112,17 @@ label-mode-background = ${colors.primary}
 label-focused = 
 label-focused-background = ${colors.background}
 ;label-focused-foreground = #e07121
-label-focused-underline=#e07121
 label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %icon%
 label-unfocused-padding = 1
 label-unfocused-background =  ${colors.background}
-label-unfocused-underline  = f6f7f4
 
 
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %icon%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
@@ -250,7 +248,6 @@ format-disconnected =
 
 ################################
 [module/date]
-
  date                        = %D
 
 format                      = <label>
@@ -263,12 +260,12 @@ format-background            = ${colors.background}
 format-foreground           =  e26bef
 
 
+
 ;time                        = %a %m/%e    %I : %M  %p
-time                        = %I:%M%P
+time                        = | %I:%M%P
 time-alt                    = %A, %B %e 
 
 type                        = internal/date
-format-underline            = f6f7f4
 
 
 
@@ -303,7 +300,7 @@ full-at = 100
 
 format-charging =  <label-charging>
 format-charging-prefix ="  "
-format-charging-prefix-foreground = 08d620
+format-charging-prefix-foreground = #458588
 format-charging-background =${colors.background}
 
 format-discharging = <label-discharging>
@@ -326,7 +323,6 @@ expand-right = true
 format-spacing = 1
 format-background =  ${colors.background}
 format-padding = 2
-format-underline = f6f7f4
 
 label-open =
 label-open-foreground = ${colors.secondary}
@@ -363,6 +359,61 @@ margin-top = 940
 margin-bottom = 940
 
 ; vim:ft=dosini
+
+#################spotify############################
+
+[module/previous]
+type = custom/script
+interval = 86400
+format = "%{T3}<label>"
+format-padding = 5
+; Previous song icon
+exec = echo ""
+; Check if spotify is running before displaying the icon
+exec-if = "pgrep spotify"
+format-underline = #1db954
+line-size = 1
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+
+[module/next]
+type = custom/script
+exec-if = "pgrep spotify"
+interval = 86400
+format = "%{T3}<label>"
+format-padding = 5
+; Next song icon
+exec = echo ""
+; Check if spotify is running before displaying the icon
+
+format-underline = #1db954
+line-size = 1
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
+[module/playpause]
+type = custom/ipc
+; Default
+hook-0 = echo ""
+; Playing
+hook-1 = echo ""
+; Paused
+hook-2 = echo ""
+initial = 1
+format-underline = #1db954
+line-size = 1
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+
+[module/spotify]
+type = custom/ipc
+hook-0 = echo ""
+hook-1 = python3 ~/.config/polybar/scripts/spotify/spotify_status.py
+initial = 1
+format-padding = 4
+format-underline = #1db954
+line-size = 1
+; [i3wm only] - Uncomment the below line to focus on Spotify when clicking on the song name (credits to https://github.com/Esya)
+; click-left = i3-msg '[class="Spotify"] focus'
+
+
 
 
 
