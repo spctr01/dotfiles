@@ -2,7 +2,7 @@
 > -  OS:-           ARCH LINUX
 > -  WM:-           I3-GAPS
 > -  BAR:-          POLYBAR
-> -  EMULATOR :-    ST
+> -  terminal :-    ST
 > -  COMPOSITOR :-  PICOM
 > -  SHELL :-       ZSH
 > -  MENU :-        ROFI
