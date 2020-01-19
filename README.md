@@ -9,5 +9,5 @@
 
  ## SOME SCREENCHOTS
 
- ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/2.png)
  ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/1.png)
+ ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/2.png)
