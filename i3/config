@@ -191,24 +191,24 @@ hide_edge_borders both
 for_window [class="^.*"] border pixel 0
 new_window 1pixel
 
-#########
-# DarkGrey background with white text - not focus grey background - black text
-# Windows decoration colors
-# class border backgr. text indicator
-client.placeholder #242424 #242424 #ffffff
-client.background #242424 #242424 #ffffff
-client.focused #242425 #11bf9c #ffffff #fdb95b
-#client.unfocused #222222 #ffddaf #ffffff #ffddaf
-#client.focused_inactive #222222 #ffddaf #ffffff #ffddaf
-client.urgent #d42121 #d42121 #f7f7f7 #d42121
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use 
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
 
-####colors######################
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
-#################################
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+#client.focused_inactive $bg     $bg     $fg  $bg       $bg
+#client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
+
+
 
 
 
@@ -223,8 +223,10 @@ border_radius 7
 ######polybar
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id $HOME/.config/polybar/scripts/spotify/launchlistener.sh.sh
+exec_always --no-startup-id $HOME/.config/polybar/scripts/spotify/launchlistener.sh
 
+#########Picom
+exec_always $HOME/.config/picom/launch.sh
 
 # Screen brightness controls with notification
 bindsym XF86MonBrightnessUp exec "light -A 2;  # increase screen brightness with notification
