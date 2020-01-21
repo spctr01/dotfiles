@@ -1,5 +1,5 @@
  
-#!/usr/bin/env bash
+#!/usr/bin/ebash
 
 # Terminate already running bar instances
 killall -q polybar

@@ -25,7 +25,7 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 1
+line-size = 2
 line-color = #d8dee9
 enable-ipc = true
 
@@ -47,7 +47,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left =  powermenu i3
 modules-center =  spotify previous playpause next
-modules-right =  xkeyboard     alsa  memory cpu   battery  date
+modules-right =  xkeyboard     alsa  memory cpu   battery  date htop
 
 
 tray-position = right
@@ -72,6 +72,7 @@ cursor-scroll = ns-resize
 type = internal/xwindow
 label = %title:0:30:...%
 
+###############################
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
@@ -85,7 +86,7 @@ label-layout =
 
 label-indicator-padding = 2
 label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
+label-indicator-background = ${colors.alert}
 label-indicator-underline = ${colors.secondary}
 
 
@@ -178,7 +179,7 @@ format-prefix = "  "
 format-prefix-foreground = f71904
 format-foreground = f6f7f4
 format-background = ${colors.background}
-label = %percentage:2%%
+label = %percentage:2%
 format-padding = 0
 
 
@@ -191,7 +192,7 @@ interval = 2
 format-prefix = "  "
 format-prefix-foreground = #4bffdc
 format-foreground = f6f7f4
-label = %percentage_used%%
+label = %percentage_used%
 format-padding = 0
 
 
@@ -263,7 +264,7 @@ format-foreground           =  e26bef
 
 ;time                        = %a %m/%e    %I : %M  %p
 time                        = | %I:%M%P
-time-alt                    = %A, %B %e 
+time-alt                    = %A, %B %e |%H:%M
 
 type                        = internal/date
 
@@ -280,9 +281,8 @@ format-volume = <label-volume>
 label-volume-foreground = f6f7f4
 format-volume-foreground = #00c5f7
 format-volume-background =${colors.background}
-format-muted-prefix = " "
 format-muted-foreground = #f92504
-label-muted =x
+label-muted = 
 format-volume-padding = 0
 
 
@@ -317,14 +317,13 @@ format-full-underline = #17701a
 ################################
 [module/powermenu]
 type = custom/menu
-
 expand-right = true
 
 format-spacing = 1
 format-background =  ${colors.background}
 format-padding = 2
 
-label-open =
+label-open =
 label-open-foreground = ${colors.secondary}
 label-close =  
 label-close-foreground = ${colors.secondary}
@@ -333,10 +332,11 @@ label-separator-foreground = #458588
 
 menu-0-0 =   
 menu-0-0-exec =reboot
-menu-0-1 = 
+menu-0-1 =
 menu-0-1-exec = shutdown now 
 menu-0-0-foreground = 08d687
 menu-0-1-foreground = ef0909
+
 
 
 
