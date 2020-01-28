@@ -1,17 +1,28 @@
 configuration {
+/*width: 35;*/
+lines: 4;
+columns: 1;
+show-icons: true;
+hide-scrollbar: true;
+theme: "~/.config/rofi/custom.rasi";
+fullscreen: false;
+
+
+
+fake-transparency: true;
+terminal: "rofi-sensible-terminal";
+padding: 200;
+fixed-num-lines: true;
+
+
+
+
 /*	modi: "window,run,ssh";*/
-	width: 40;
-	lines: 5;
-	columns: 1;
-/*	font: "Hack 10pt";*/
+/*	font: "Hack ";*/
 /*	bw: 1;*/
-	location: 0;
-	padding: 5;
+/*	location: 0;*/
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
-/*	fixed-num-lines: true;*/
-	show-icons: true;
-/*	terminal: "rofi-sensible-terminal";*/
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
 /*	run-command: "{cmd}";*/
@@ -42,9 +53,6 @@ configuration {
 /*	line-padding: 1;*/
 /*	filter: ;*/
 /*	separator-style: "dash";*/
-	hide-scrollbar: true;
-/*	fullscreen: true;*/
-/*	fake-transparency: true;*/
 /*	dpi: -1;*/
 /*	threads: 0;*/
 /*	scrollbar-width: 8;*/
@@ -141,7 +149,11 @@ configuration {
 /*	me-select-entry: "MousePrimary";*/
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
+ 
 
 
-theme: "~/.cache/wal/colors-rofi-dark.rasi";	
+
+
+
 }
+@import "/usr/share/rofi/themes/android_notification.rasi"
