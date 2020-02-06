@@ -1,5 +1,3 @@
-<a href=""><img src="https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg" alt="askme"></a>
-
 > -  OS:-           ARCH LINUX
 > -  WM:-           I3-GAPS
 > -  BAR:-          POLYBAR
