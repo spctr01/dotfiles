@@ -1,3 +1,4 @@
+<a href="https://github.com/paranoid73/"><img src="https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg" alt="askme"></a>
 
 > -  OS:-           ARCH LINUX
 > -  WM:-           I3-GAPS
@@ -11,3 +12,7 @@
 
  ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/1.png)
  ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/2.png)
+ 
+ ## Want to help?
+contribute some code. always open .
+This config could be even better with your help.
