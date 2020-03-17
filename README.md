@@ -1,3 +1,6 @@
+# .dotfiles
+   My Arch Linux configuration files.
+
 > -  OS:-           ARCH LINUX
 > -  WM:-           I3-GAPS
 > -  BAR:-          POLYBAR
