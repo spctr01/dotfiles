@@ -1,6 +1,6 @@
-# .dotfiles
+[`What are dotfiles?`](https://wiki.archlinux.org/index.php/Dotfiles) 
 
-#### [`What are dotfiles?`](https://wiki.archlinux.org/index.php/Dotfiles) 
+
 
 #### bspwm
  ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/rofi.png)
