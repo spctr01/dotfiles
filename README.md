@@ -2,19 +2,11 @@
 
 #### [`What are dotfiles?`](https://wiki.archlinux.org/index.php/Dotfiles) 
 
+## bspwm
+ ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/rofi.png)
 
- 
- 
 
-> -  OS:-           ARCH LINUX
-> -  WM:-           I3-GAPS
-> -  BAR:-          POLYBAR
-> -  terminal :-    ST
-> -  COMPOSITOR :-  PICOM
-> -  SHELL :-       ZSH
-> -  MENU :-        ROFI
-
- ## SOME SCREENCHOTS
+ ## i3-gaps (old switched to bspwm)
 
  ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/1.png)
  ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/2.png)
