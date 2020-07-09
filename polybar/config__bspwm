@@ -1,0 +1,418 @@
+          ;=====================================;
+          ; ____       _       _                ;
+          ;|  _ \ ___ | |_   _| |__   __ _ _ __ ;
+          ;| |_) / _ \| | | | | '_ \ / _` | '__|;
+          ;|  __/ (_) | | |_| | |_) | (_| | |   ;
+          ;|_|   \___/|_|\__, |_.__/ \__,_|_|   ;
+          ;              |___/                  ;
+          ;=====================================;
+  ; https://github.com/spctr01/dotfiles/blob/master/polybar/config
+
+
+
+
+[colors]
+background =  ${xrdb:color0:#222}
+foreground = #f4f4f4
+foreground-alt = ${xrdb:color7:#222}
+primary = ${xrdb:color5:#222}
+secondary = ${xrdb:color8:#222}
+alert = ${xrdb:color7:#222}
+transparent = #a121423
+icon = ${xrdb:color6:#222}
+
+
+
+[bar/demo]
+#;monitor = ${env:MONITOR:HDMI-1}
+width = 85%
+height = 23
+offset-x = 7.5%
+offset-y = 5
+radius = 0
+
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #d8dee9
+enable-ipc = true
+
+border-top-size = 2
+border-color = ${colors.primary}
+ 
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 2
+module-margin-right = 0
+
+
+font-0 = "bdf-curie:style=Bold:pixelsize=9;2"
+font-1 = "FontAwesome5Free:style=Solid:size=9;1"
+font-2 = "FontAwesome5Brands:style=Solid:size=9;1"
+font-3 = siji:pixelsize=10;1
+
+
+modules-left =  powermenu  bspwm
+modules-center =  spotify previous playpause next date
+modules-right =  xkeyboard  wlan pulseaudio   memory cpu   battery  
+
+
+tray-position = right
+tray-padding = 4
+tray-offset-y = 97%
+tray-offset-x = 7.5%
+tray-maxsize = 17
+tray-detached = true
+tray-background = ${colors.transparent}
+
+
+wm-restack = bspwm
+override-redirect = true
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+;scroll-up = bspc desktop -f prev.local
+;scroll-down = bspc desktop -f next.local
+
+
+
+########################################################################
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+############################################################################
+[module/xkeyboard]
+type = internal/xkeyboard
+
+label-layout = 
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.alert}
+label-indicator-underline = ${colors.primary}
+
+
+#############################################################################
+[module/bspwm]
+type = internal/bspwm
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;龜
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-default =
+
+label-mode-padding = 0
+label-mode-foreground = ${colors.secondary}
+label-mode-background = ${colors.primary}
+
+label-focused =%icon%
+label-focused-background = ${colors.background}
+label-focused-foreground =  #f22446
+label-focused-padding = 3
+
+label-occupied =%icon%
+label-occupied-background =  ${colors.background}
+label-occupied-foreground = #24f257
+label-occupied-padding = 3
+
+
+label-urgent =%index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 3
+
+label-empty =%icon%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 3
+
+
+
+
+#################################################################################
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "  "
+format-prefix-foreground = ${colors.icon}
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+label = %percentage:2%
+format-padding = 2
+
+
+
+
+#################################################################
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = "  "
+format-prefix-foreground = ${colors.icon}
+format-foreground = ${colors.foreground}
+label = %percentage_used%
+format-padding = 2
+
+
+
+
+#########################################################################
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+unknown-as-up = true
+
+format-connected = <ramp-signal> <label-connected>
+;format-connected-underline = f97704
+label-connected = "%essid%       %downspeed:min%"
+label-connected-foreground = ${colors.secondary)
+format-connected-background =  ${colors.background}
+format-connected-padding = 3
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = #04f735
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 =
+ramp-signal-4 =
+ramp-signal-foreground = ${colors.icon}
+
+accumulate-stats = true
+
+####################################################################################
+[module/eth]
+type = internal/network
+interface = enp2s0f2
+interval = 3.0
+
+format-connected-underline = #55aa55
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+
+
+
+#########################################################################
+[module/date]
+ date                        = %D
+
+format                      =<label>
+
+format-font = 6
+interval                    = 1.0
+
+label                       = %{A6:time-admin:}  %time%   %{A}
+format-background            = ${colors.background}
+format-foreground           =   ${colors.foreground}
+
+
+
+time                        = |  %A %e %B        %I : %M %P
+time-alt                    = |  %A %e %B        %H : %M
+
+type                        = internal/date
+
+
+
+
+
+
+
+##########################pulseaudio######################################
+[module/pulseaudio]
+type = internal/pulseaudio
+
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+use-ui-max = true
+
+interval = 5
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%
+label-muted =
+label-muted-foreground = #f92504
+format-volume-padding = 2
+
+ramp-volume-0 =" " 
+ramp-volume-1 =" " 
+ramp-volume-2 =" "
+ramp-volume-foreground = ${colors.icon}
+
+click-right = pavucontrol &
+
+
+################################
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC0
+full-at = 100
+
+label-charging = %percentage%
+format-charging =  <label-charging>
+format-charging-prefix ="  "
+format-charging-prefix-foreground = #458588
+format-charging-background =${colors.background}
+format-charging-padding = 2
+
+label-discharging = %percentage% 
+format-discharging = <label-discharging>  <ramp-capacity>  
+format-discharging-prefix = 
+format-discharging-prefix-foreground = ${colors.icon}
+format-discharging-background = ${colors.background}
+format-discharging-padding = 2
+format-full-prefix = ""
+format-full-prefix-foreground = #f7eb04
+format-full-underline = #17701a
+
+ramp-capacity-0 = 
+ramp-capacity-foreground = ${colors.icon}
+
+
+#################################################################################
+[module/powermenu]
+type = custom/menu
+expand-right = true
+
+format-spacing = 1
+format-background =  ${colors.primary}
+format-padding = 3
+
+label-open =
+label-open-foreground = ${colors.alert}
+label-close =
+label-close-foreground = ${colors.secondary}
+label-separator = |
+label-separator-foreground = #458588
+
+menu-0-0 =
+menu-0-0-exec =reboot
+menu-0-1 =
+menu-0-1-exec = shutdown now 
+menu-0-0-foreground = 08d687
+menu-0-1-foreground = ef0909
+menu-0-0-padding = 2
+menu-0-1-padding = 2
+
+
+
+
+
+
+
+
+###########################################################################################
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+compositing-foreground = source
+;compositing-border = over
+pseudo-transparency = true
+
+
+
+############################################################################################
+[global/wm]
+margin-top = 940
+margin-bottom = 940
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+####################################################################################################
+#############################----------S-P-O-T-I-F-Y----------######################################
+####################################################################################################
+
+[module/previous]
+type = custom/script
+interval = 86400
+format = "%{T3}<label>"
+format-padding = 5
+; Previous song icon
+exec = echo ""
+; Check if spotify is running before displaying the icon
+exec-if = "pgrep spotify"
+format-underline = #1db954
+line-size = 1
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+
+[module/next]
+type = custom/script
+exec-if = "pgrep spotify"
+interval = 86400
+format = "%{T3}<label>"
+format-padding = 5
+; Next song icon
+exec = echo ""
+; Check if spotify is running before displaying the icon
+
+format-underline = #1db954
+line-size = 1
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
+[module/playpause]
+type = custom/ipc
+; Default
+hook-0 = echo ""
+; Playing
+hook-1 = echo ""
+; Paused
+hook-2 = echo ""
+initial = 1
+format-underline = #1db954
+format-foreground = #1db954
+line-size = 1
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+
+[module/spotify]
+type = custom/ipc
+hook-0 = echo ""
+hook-1 = python3 ~/.config/polybar/scripts/spotify/spotify_status.py
+initial = 1
+format-padding = 4
+format-underline = #1db954
+line-size = 1
+
+
+
+
+
+
+
+
+
+
