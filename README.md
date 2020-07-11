@@ -6,7 +6,7 @@
  ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/rofi.png)
  ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/3.png)
 
-===================================================================
+===========================================================
 --
  #### i3-gaps (old switched to bspwm)
  ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/1.png)
