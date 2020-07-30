@@ -1,0 +1,4 @@
+exec bspwm
+wal -R
+
+
