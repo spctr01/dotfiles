@@ -1,15 +1,15 @@
 ### [`What are dotfiles?`](https://wiki.archlinux.org/index.php/Dotfiles) 
-***
->`OS            :    Arch Linux`  
-`wm            :    i3 , bspwm`  
-`shell         :    fish`  
-`panel         :    Polybar`  
-`terminal      :    st, alacritty`  
-`compositor    :    picom`  
-`menu          :    rofi`  
-`hotkey daemon :    sxhkd`  
-`notification  :    dunst`  
-***
+
+ >  OS            :    Arch Linux  
+  wm            :    i3 , bspwm  
+  shell         :    fish  
+  panel         :    Polybar  
+  terminal      :    st, alacritty  
+  compositor    :    picom  
+   menu          :    rofi  
+   hotkey daemon :    sxhkd  
+   notification  :    dunst
+
 
   
 
