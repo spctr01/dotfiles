@@ -13,14 +13,16 @@
 
   
 
-#### bspwm
- ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/rofi.png)
- ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/3.png)
+## Preview
+ ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/4.png)
+ 
+ 
+ ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/5.png)
 
------------------------------
- #### i3-gaps (old switched to bspwm)
- ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/1.png)
- ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/2.png)
+
+ #### old
+ 
+ ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/old.gif)
  
  ## Want to help?
 contribute some code. always open .
