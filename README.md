@@ -1,4 +1,4 @@
-### [`What are dotfiles?`](https://wiki.archlinux.org/index.php/Dotfiles) 
+<h1 align="center">dotfiles ❤ </h1>
 
  >  OS            :    Arch Linux  
   wm            :    i3 , bspwm  
@@ -13,7 +13,8 @@
 
   
 
-## Preview
+<h2 align="center">Preview</h2>
+
  ![alt text](https://github.com/spctr01/dotfiles/blob/master/imgs/4.png)
  
  
