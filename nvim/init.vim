@@ -15,9 +15,9 @@ set fileformat=unix
 let mapleader = ' '
 
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
+Plug 'flrnd/candid.vim'
 Plug 'joshdick/onedark.vim'
-
+Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
 Plug 'preservim/nerdcommenter'
@@ -25,8 +25,16 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
+if (has("autocmd"))
+  augroup colorextend
+    autocmd!
+    autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+  augroup END
+endif
 
 colorscheme onedark
+let g:lightline = { 'colorscheme': 'candid' }
+
 
 " NerdCommenter
 nmap <C-_> <Plug>NERDCommenterToggle
@@ -35,7 +43,7 @@ vmap <C-_> <Plug>NERDCommeneerToggle<CR>gv
 "NerdTree
 let NERDTreeQuitOnOpen=1
 let g:NERDTreeMinimalUI=1
-nmap <F2> :NERDTreeToggle<CR>
+nmap <tab> :NERDTreeToggle<CR>
 
 "Tabs
 let g:airline#extensions#tabline#enabled=1
