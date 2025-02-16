@@ -50,6 +50,7 @@ config.font_size = 16
 config.automatically_reload_config = true
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "NeverPrompt"
+config.default_cursor_style = "BlinkingBar"
 
 config.window_background_opacity = 0.8 -- Adjust the opacity as needed
 config.background = {
@@ -64,8 +65,8 @@ config.background = {
 config.window_padding = {
     left = 40,
     right = 30,
-    top = 10,
-    bottom = 10,
+    top = 15,
+    bottom = 15,
   }
 
 
